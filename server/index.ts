@@ -1,7 +1,10 @@
+import 'dotenv/config';
 import express, { type Request, type Response } from 'express';
 import mongoose from 'mongoose';
 
-mongoose.connect(process.env.MONGODB_URI!)
+import bookRoutes from './src/api/book.js';
+
+mongoose.connect(`${process.env.MONGODB_URI!}`)
   .then(() => {
     console.log('Connected to MongoDB');
   })
@@ -12,9 +15,14 @@ mongoose.connect(process.env.MONGODB_URI!)
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req: Request, res: Response) => {
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (_req: Request, res: Response) => {
   res.json({ message: 'Hello World!', status: 'success' });
 });
+
+app.use('/api/books', bookRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
