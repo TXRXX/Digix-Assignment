@@ -1,9 +1,10 @@
 import express, { type Request, type Response } from "express";
 import Book from "../model/Book.js";
+import { authMiddleware } from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.post("/", async (req: Request, res: Response) => {
+router.post("/", authMiddleware, async (req: Request, res: Response) => {
   try {
     const { title, author, description, publishedAt } = req.body;
 
@@ -32,7 +33,7 @@ router.get("/", async (_req: Request, res: Response) => {
   }
 });
 
-router.delete("/:id", async (req: Request, res: Response) => {
+router.delete("/:id", authMiddleware, async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const book = await Book.findByIdAndDelete(id);

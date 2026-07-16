@@ -18,6 +18,10 @@ request:
   variables:
     - name: BASEURL
       value: http://localhost:3030/api
+    - name: TOKEN
+      value: ""
+    - name: BOOK_ID
+      value: ""
 bundled: false
 extensions:
   bruno:

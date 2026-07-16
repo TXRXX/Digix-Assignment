@@ -1,23 +1,20 @@
 info:
-  name: Create Book
+  name: Login
   type: http
-  seq: 1
+  seq: 2
 
 http:
   method: POST
-  url: "{{BASEURL}}/books"
+  url: "{{BASEURL}}/users/login"
   headers:
     - name: Content-Type
       value: application/json
-    - name: Authorization
-      value: Bearer {{TOKEN}}
   body:
     type: json
     data: |-
       {
-        "title": "BookA",
-        "author": "John Doe",
-        "description": "Lorem Ipsum"
+        "username": "johndoe",
+        "password": "password123"
       }
   auth: inherit
 

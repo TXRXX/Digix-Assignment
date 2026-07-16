@@ -3,6 +3,7 @@ import express, { type Request, type Response } from 'express';
 import mongoose from 'mongoose';
 
 import bookRoutes from './src/api/book.js';
+import userRoutes from './src/api/user.js';
 
 mongoose.connect(`${process.env.MONGODB_URI!}`)
   .then(() => {
@@ -23,6 +24,7 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 app.use('/api/books', bookRoutes);
+app.use('/api/users', userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
