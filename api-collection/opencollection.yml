@@ -19,7 +19,7 @@ request:
     - name: BASEURL
       value: http://localhost:3030/api
     - name: TOKEN
-      value: ""
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTU2MmVkNmY5Y2NjOWUzODEyZDk3NTMiLCJpYXQiOjE3ODQyMDc3NTcsImV4cCI6MTc4NDgxMjU1N30.fhnKxSyfsqvq8i2U9oSo4lgTFIQKSnc5ZKRyKYa34As
     - name: BOOK_ID
       value: ""
 bundled: false
