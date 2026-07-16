@@ -6,15 +6,15 @@ const router = express.Router();
 
 router.post("/", authMiddleware, async (req: Request, res: Response) => {
   try {
-    const { title, author, description, publishedAt } = req.body;
+    const { title, author, description, publishedAt, category } = req.body;
 
-    if (!title || !author || !description) {
+    if (!title || !author || !description || !category) {
       return res.status(400).json({
-        message: "title, author, and description are required",
+        message: "title, author, description, and category are required",
       });
     }
 
-    const book = new Book({ title, author, description, publishedAt });
+    const book = new Book({ title, author, description, publishedAt, category });
     await book.save();
     res.status(201).json(book);
   } catch (error) {

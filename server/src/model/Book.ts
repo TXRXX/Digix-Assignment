@@ -13,6 +13,10 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+    required: true,
+  },
   publishedAt: {
     type: Date,
     default: Date.now,
