@@ -33,7 +33,7 @@ export function BookForm({ onCreated, setIsOpenBookForm, setSelectedBookId }: Bo
       setSelectedBookId(book._id);
       onCreated();
       setIsOpenBookForm(false);
-      toast.success("สร้างหนังสือสำเร็จ");
+      toast.success("บันทึกหนังสือสำเร็จ");
     } catch (err) {
       toast.error(err instanceof ApiError ? err.message : "Failed to create book");
       setError(err instanceof ApiError ? err.message : "Failed to create book");
