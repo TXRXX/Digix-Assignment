@@ -48,7 +48,7 @@ export default function LoginPage() {
   if (alreadyAuthenticated) {
     return (
       <div className="flex min-h-screen items-center justify-center text-zinc-500">
-        Loading...
+        กำลังโหลดข้อมูล...
       </div>
     );
   }

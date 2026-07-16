@@ -30,7 +30,7 @@ export function AuthGuard({ children }: AuthGuardProps) {
 
   if (!authenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center text-zinc-500">
+      <div className="flex min-h-screen items-center justify-center text-zinc-500 bg-zinc-50">
         กำลังโหลดข้อมูล...
       </div>
     );
