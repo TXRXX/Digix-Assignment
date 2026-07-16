@@ -1,4 +1,4 @@
-const TOKEN_KEY = "token";
+const TOKEN_KEY = "book_library_token";
 
 export function getToken(): string | null {
   if (typeof window === "undefined") return null;
