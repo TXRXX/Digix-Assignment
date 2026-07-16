@@ -50,6 +50,7 @@ router.post("/register", async (req: Request, res: Response) => {
         username: user.username,
       },
     });
+    console.log(`User registered: ${user}`);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
     console.error(error);
@@ -87,6 +88,7 @@ router.post("/login", async (req: Request, res: Response) => {
         username: user.username,
       },
     });
+    console.log(`User logged in: ${user}`);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
     console.error(error);

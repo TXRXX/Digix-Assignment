@@ -40,5 +40,6 @@ app.use('/api/books', bookRoutes);
 app.use('/api/users', userRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Book library server is up and ready to roll`);
+  console.log(`Running on http://localhost:${PORT}`);
 });

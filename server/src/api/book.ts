@@ -17,6 +17,7 @@ router.post("/", authMiddleware, async (req: Request, res: Response) => {
     const book = new Book({ title, author, description, publishedAt, category });
     await book.save();
     res.status(201).json(book);
+    console.log(`Book created: ${book}`);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
     console.error(error);
@@ -41,6 +42,7 @@ router.delete("/:id", authMiddleware, async (req: Request, res: Response) => {
       return res.status(404).json({ message: "Book not found" });
     }
     res.status(200).json({ message: "Book deleted successfully" });
+    console.log(`Book deleted: ${book}`);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
     console.error(error);
